@@ -10,7 +10,9 @@ public class Runner2 {
 
         Lib lib = context.getBean("lib", Lib.class);
 
-        lib.getBook();
+        lib.getBook("ZZZZ", new Book("123", "123", 1234));
+
+        lib.putBook();
 
 
 
