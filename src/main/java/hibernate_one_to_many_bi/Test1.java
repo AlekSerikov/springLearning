@@ -20,30 +20,32 @@ public class Test1 {
 //            Session session = factory.getCurrentSession(); // создаем при каждом подключении
 //            session.beginTransaction();
 //
-//            Department department = new Department("IT", 300, 1200);
+//            Department department = new Department("Sales", 800, 1500);
 //            Employee em1 = new Employee("Alex", "Serikov", 800);
 //            Employee em2 = new Employee("Elena", "Orlova", 1000);
+//            Employee em3 = new Employee("Oleg", "Shalun", 1200);
 //            department.addEmployeeToDepartment(em1);
 //            department.addEmployeeToDepartment(em2);
+//            department.addEmployeeToDepartment(em3);
 //
 //            session.save(department);
 //
 //            session.getTransaction().commit();
 //            System.out.println("Done");
 
-            //get employees from dep
+            //get employees from dep///////////////////////////////////////////////////////
 
-//            Session session = factory.getCurrentSession(); // создаем при каждом подключении
-//            session.beginTransaction();
-//
-//            Department department = session.get(Department.class, 1);
-//
-//            System.out.println(department.getEmps());
-//
-//            session.getTransaction().commit();
-//            System.out.println("Done");
+            Session session = factory.getCurrentSession(); // создаем при каждом подключении
+            session.beginTransaction();
 
-            //get dep from employee
+            Department department = session.get(Department.class, 3);
+
+            System.out.println(department.getEmps());
+
+            session.getTransaction().commit();
+            System.out.println("Done");
+
+            //get dep from employee////////////////////////////////////
 
 //            Session session = factory.getCurrentSession(); // создаем при каждом подключении
 //            session.beginTransaction();
@@ -55,17 +57,17 @@ public class Test1 {
 //            session.getTransaction().commit();
 //            System.out.println("Done");
 
-            //delete employee
+            //delete employee///////////////////////////////////////
 
-            Session session = factory.getCurrentSession(); // создаем при каждом подключении
-            session.beginTransaction();
-
-            Employee employee = session.get(Employee.class, 1);
-
-            session.delete(employee);
-
-            session.getTransaction().commit();
-            System.out.println("Done");
+//            Session session = factory.getCurrentSession(); // создаем при каждом подключении
+//            session.beginTransaction();
+//
+//            Employee employee = session.get(Employee.class, 1);
+//
+//            session.delete(employee);
+//
+//            session.getTransaction().commit();
+//            System.out.println("Done");
 
         } finally {
             factory.close();

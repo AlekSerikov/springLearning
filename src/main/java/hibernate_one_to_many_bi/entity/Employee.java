@@ -22,7 +22,7 @@ public class Employee {
     @Column(name = "salary")
     private double salary;
 
-    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}) //чтобы не удалять всех работкников при удалении департамента и наоборот
+    @ManyToOne(cascade = CascadeType.ALL) //чтобы не удалять всех работкников при удалении департамента и наоборот
     @JoinColumn(name = "department_id") //имя столбца в таблице, который foreign key
     private Department department;
 
