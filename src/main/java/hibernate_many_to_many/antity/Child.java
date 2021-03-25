@@ -30,10 +30,9 @@ public class Child {
     public Child() {
     }
 
-    public Child(String firstName, int age, List<Section> sections) {
+    public Child(String firstName, int age) {
         this.firstName = firstName;
         this.age = age;
-        this.sections = sections;
     }
 
     public void addSectionToChild(Section section){

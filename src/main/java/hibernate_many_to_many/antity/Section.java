@@ -16,6 +16,7 @@ public class Section {
     @Column(name = "name")
     private String name;
 
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "child_section"
             , joinColumns = @JoinColumn(name = "section_id")
@@ -26,8 +27,7 @@ public class Section {
     public Section() {
     }
 
-    public Section(int id, String name) {
-        this.id = id;
+    public Section(String name) {
         this.name = name;
     }
 
