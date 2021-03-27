@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Aleksey
-  Date: 26.03.2021
-  Time: 22:10
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Ask Details</title>
@@ -15,12 +10,41 @@
 <br>
 <br>
 
+<form:form action="showDetails" modelAttribute="employee">
 
-<form action="showDetails" method="get">
-    <input type="text" name="employeeName" placeholder="Inter you name">
-    <input type="submit">
-</form>
+    Name <form:input path="name"/>
+    <form:errors path="name"/>
+    <br><br>
+    Surname <form:input path="surname"/>
+    <form:errors path="surname"/>
+    <br><br>
+    Salary <form:input path="salary"/>
+    <br><br>
+    Email <form:input path="email"/>
+    <form:errors path="email"/>
+    <br><br>
+    Department <form:select path="department">
+    <form:option value="Information Techology" label="IT"/>
+    <form:option value="Human resources" label="Hr"/>
+    <form:option value="Sales" label="Sales"/>
+    </form:select>
+    <br><br>
 
+    Which car do you wont?
+    BMV <form:radiobutton path="carBrand" value="BMW"/>
+    Audi <form:radiobutton path="carBrand" value="AUDI"/>
+    Mercedes <form:radiobutton path="carBrand" value="Mercrdes"/>
+    <br><br>
+     Foreign languages
+    EN<form:checkbox path="languages" value="English"/>
+    DE<form:checkbox path="languages" value="Deutch"/>
+    FR<form:checkbox path="languages" value="French"/>
+
+
+    <br><br>
+    <input type="submit" value="OK">
+
+</form:form>
 
 </body>
 </html>
