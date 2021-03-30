@@ -1,6 +1,6 @@
-package com.zaurtregulov.spring.mvc_hibernate_aop.dao;
+package com.zaurtregulov.spring.rest.dao;
 
-import com.zaurtregulov.spring.mvc_hibernate_aop.entity.Employee;
+import com.zaurtregulov.spring.rest.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -41,5 +41,4 @@ public class EmployeeDAOImpl implements EmployeeDAO{
         query.executeUpdate();
 //        sessionFactory.getCurrentSession().delete(getEmployee(id));
     }
-
 }
