@@ -8,6 +8,6 @@ import java.util.List;
 //@Repository можно не писать т.к. он подразумевается
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> { // <Employee - тип сущности с которим будет работать репозиторий
                                                                                // Integer -  тип поля, который PK в Employee >
-    public List<Employee> findAllByName(String name);
+
 
 }
